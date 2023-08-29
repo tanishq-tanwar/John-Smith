@@ -32,8 +32,11 @@
       <div class="container">
         <div class="main-nav">
           <button class="btn-none">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <svg class="hamburger" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+              <svg class="none-display" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
           </button>
           <ul class="flex space-bet no">
@@ -413,12 +416,16 @@
       document.querySelector('.btn-none').addEventListener("click",function(){
         document.querySelector('.no').classList.toggle('block');
         document.querySelector('.main-nav').classList.toggle('black')
+        document.querySelector('.none-display').classList.toggle('display');
+        document.querySelector('.hamburger').classList.toggle('no-display');
       })
       const anchorTagsWithinClassNo = document.querySelectorAll('.no a');
       anchorTagsWithinClassNo.forEach((anchorTag) => {
         anchorTag.addEventListener('click', function(event) {
           document.querySelector('.no').classList.remove('block');
-        document.querySelector('.main-nav').classList.remove('black')
+          document.querySelector('.main-nav').classList.remove('black')
+          document.querySelector('.none-display').classList.toggle('display');
+          document.querySelector('.hamburger').classList.toggle('no-display');
         });
       });
 
