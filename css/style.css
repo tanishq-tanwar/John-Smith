@@ -40,6 +40,15 @@ body{
 .align-center{align-items: center;}
 .space-bet{ justify-content: space-between;}
 
+.none-display {
+  display: none;
+}
+.display {
+  display: block;
+}
+.no-display {
+  display: none;
+}
 .wrap-1{
   background-color: #15263e;
 }
